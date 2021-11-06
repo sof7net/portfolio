@@ -1,12 +1,12 @@
 <template>
     <div class="header">
-        <h1>SOF7</h1>
+        <h1>S O F 7</h1>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><router-link to="/">Home</router-link></li>
+                <li><router-link to="/about">About</router-link></li>
+                <li><router-link to="/projects">Projects</router-link></li>
+                <li><router-link to="/contact">Contact</router-link></li>
             </ul>
         </nav>
     </div>
@@ -20,27 +20,35 @@
         margin-bottom: 2em;
         user-select: none;
         font-family: 'IBM Plex Sans';
+        display: flex;
+        flex-direction: column; // comment for alt style
+        align-items: center;
 
         h1 {
             margin: 0;
-            font-size: 9em;
+            font-size: 8em;
             font-weight: 100;
-            letter-spacing: 0.4em;
+            // letter-spacing: 0.8em;
+            text-align: center
         }
 
         nav ul {
-            display: flex;
-            justify-content: space-around;
+            padding: 0;
             margin-top: 3em;
             list-style-type: none;
+
+            li {
+                display: inline-block;
+                margin: 0 3em; // set to (0,1) alt style
+            }
             
-            li a {
+            a {
                 font-weight: 300;
                 text-transform: uppercase;
                 text-decoration: none;
                 position: relative;
                 font-size: 1.25em;
-                color: black;
+                color: var(--text);
                 &::after {
                     content: '';
                     position: absolute;
@@ -50,9 +58,15 @@
                     height: 22.5%;
                     background: rgba(red, 40%);
                     z-index: -1;
+                    opacity: 0.65;
                 }
-                &:hover {
-                    // todo
+                &:hover, &.router-link-active {
+                    // need something better :)
+                    color: rgba(red, 40%);
+                    &::after {
+                        background-color: var(--text);
+                        opacity: 0.25;
+                    }
                 }
             }
         }
