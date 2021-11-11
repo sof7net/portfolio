@@ -29,10 +29,9 @@
 <style lang="scss">
 
     footer {
-        position: fixed;
+        position: static;
         width: 100%;
-        bottom: 0;
-        left: 0;
+        margin-bottom: 0;
         background: var(--secondary);
         color: rgba(black, 0.7);
 
@@ -42,12 +41,6 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             padding: 3em 0;
-
-            ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
 
             p {
                 margin: 0.25em;

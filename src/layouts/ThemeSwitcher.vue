@@ -41,7 +41,7 @@ function setTheme(theme: string) {
 <style lang="scss">
 
     #theme-switcher {
-        position: absolute;
+        position: fixed;
         top:5%;
         right:4%;
         font-size: 2em;
