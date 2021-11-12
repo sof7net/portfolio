@@ -3,10 +3,10 @@
         <div class="footer--wrap">
             <div>
                 <ul class="footer__link-list">
-                    <li><router-link to="/">Go back to homepage</router-link></li>
-                    <li><router-link to="/about">Learn more about me</router-link></li>
-                    <li><router-link to="/projects">Look at my projects</router-link></li>
-                    <li><router-link to="/projects">Let's work together</router-link></li>
+                    <li v-if="$route.path != '/'"><router-link to="/">Go back to homepage</router-link></li>
+                    <li v-if="$route.path != '/about'"><router-link to="/about">Learn more about me</router-link></li>
+                    <li v-if="$route.path != '/projects'"><router-link to="/projects">Look at my projects</router-link></li>
+                    <li v-if="$route.path != '/contact'"><router-link to="/contact">Let's work together</router-link></li>
                 </ul>
             </div>
             <div>
@@ -33,7 +33,7 @@
         width: 100%;
         margin-bottom: 0;
         background: var(--secondary);
-        color: rgba(black, 0.7);
+        color: var(--text);
 
         .footer--wrap {
             width: 40%;
@@ -53,7 +53,7 @@
             }
 
             a {
-                color: rgba(black, 0.7)
+                color: var(--text);
             }
         }
 
@@ -64,7 +64,7 @@
         .footer__social-list {
 
             svg {
-                transition: color .15s ease-in-out;
+                transition: color .25s ease-in-out;
             }
             
             &--github svg {
@@ -90,7 +90,8 @@
 
                 &:not(:hover) {
                     svg {
-                        color: rgba(black, 0.7)
+                        color: var(--text);
+                        opacity: 0.7;
                     }
                 }
             }

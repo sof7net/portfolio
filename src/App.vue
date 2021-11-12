@@ -31,11 +31,11 @@
 :root {
   --light-base: #F1F1F1;
   --light-text: #161616;
-  --light-secondary: #C4C4C4;
+  --light-secondary: #e4e4e4;
 
   --dark-base: #161616;
-  --dark-text: #F1F1F1;
-  --dark-secondary: #B2B2B2;
+  --dark-text: #d8d8d8;
+  --dark-secondary: #272727;
 }
 
 body {
@@ -59,7 +59,7 @@ body {
 
   color: var(--text);
   background: var(--base);
-  --link-color: 	#3366BB;
+  --link-color:#3366BB;
 
   transition: background .3s ease-in;
   transition: color .5s;
@@ -77,7 +77,7 @@ body {
 #content {
   width: 55%;
   margin-left: 22.5%;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 #watermark {
@@ -91,8 +91,11 @@ body {
   user-select: none;
 }
 
-h2 {
+h2,h3,h4 {
   font-family: 'IBM Plex Sans';
+}
+
+h2 {
   letter-spacing: 0.1em;
   font-weight: 200;
   text-align: center;
@@ -102,7 +105,6 @@ h2 {
 }
 
 h3 {
-  font-family: 'IBM Plex Sans';
   font-size: 2em;
   letter-spacing: 0.15em;
   font-weight: 200;
@@ -110,9 +112,22 @@ h3 {
 }
 
 ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+select {
+  background: none;
+  border: none;
+  font-family: 'IBM Plex Sans';
+  text-transform: uppercase;
+  outline: none;
+  padding: 0.25em;
+}
+
+input[type=checkbox] {
+  cursor: pointer;
 }
 
 </style>
