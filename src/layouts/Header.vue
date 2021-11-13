@@ -1,6 +1,9 @@
 <template>
     <div class="header">
-        <h1>S O F 7</h1>
+        <div class="header__title">
+            <h1>S O F 7</h1>
+            <span>Self taught developer & it enthusiast</span>
+        </div>
         <nav>
             <ul>
                 <li><router-link to="/">Home</router-link></li>
@@ -24,12 +27,33 @@
         flex-direction: column; // comment for alt style
         align-items: center;
 
-        h1 {
-            margin: 0;
-            font-size: 8em;
-            font-weight: 100;
-            // letter-spacing: 0.8em;
-            text-align: center
+        &__title {
+            // background: red;
+            position: relative;
+
+            h1 {
+                margin: 0;
+                font-size: 8em;
+                font-weight: 100;
+                // letter-spacing: 0.8em;
+                text-align: center;
+                background: -webkit-linear-gradient(var(--text), var(--base));
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            span {
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                text-transform: uppercase;
+                font-size: 1.25em;
+                width: 125%;
+                text-align: center;
+                opacity: .15;
+            }
         }
 
         nav ul {

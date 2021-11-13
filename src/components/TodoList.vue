@@ -1,14 +1,15 @@
 <template>
     <div class="todo-list">
         <div class="todo-list__actions">
-            <label for="todo-list__show-todo">A faire</label>
+            <label for="todo-list__actions-show--todo">A faire</label>
             <input type="checkbox" name="todo-list__show-todo" v-model="showTodo">
 
-            <label for="todo-list__show-done">Complétés</label>
+            <label for="todo-list__actions-show--done">Complétés</label>
             <input type="checkbox" name="todo-list__show-done"  v-model="showDone">
 
-            <select name="todo-list__order-by" id="">
-                <option value="">Date d'ajout</option>
+            <select name="todo-list__actions-orderby" id="">
+                <option value="" >Trier par</option>
+                <option value="created">Date d'ajout</option>
             </select>
         </div>
         <div class="todo-list__task" v-for="task in getTasks">
@@ -31,6 +32,7 @@
     let showDone = ref(false);
 
     const tagNames : any = {
+        design: 'Design',
         tech: 'Technology',
         backend: 'Back-end'
     }
