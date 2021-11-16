@@ -80,13 +80,13 @@
                     bottom: 10%;
                     right: -5%;
                     height: 22.5%;
-                    background: rgba(red, 40%);
+                    background: var(--fancy-color);
                     z-index: -1;
                     opacity: 0.65;
                 }
                 &:hover, &.router-link-active {
                     // need something better :)
-                    color: rgba(red, 40%);
+                    color: var(--fancy-color);
                     &::after {
                         background-color: var(--text);
                         opacity: 0.25;

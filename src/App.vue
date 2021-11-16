@@ -32,10 +32,12 @@
   --light-base: #F1F1F1;
   --light-text: #161616;
   --light-secondary: #e4e4e4;
+  --light-contrast: rgba(255,255,255, 0.35);
 
   --dark-base: #161616;
   --dark-text: #d8d8d8;
   --dark-secondary: #272727;
+  --dark-contrast: rgba(0,0,0, 0.35);
 }
 
 body {
@@ -48,14 +50,18 @@ body {
   &.light {
     --base: var(--light-base);
     --text: var(--light-text);
-    --secondary: var(--light-secondary)
+    --secondary: var(--light-secondary);
+    --contrast: var(--light-contrast)
   }
 
   &.dark {
     --base: var(--dark-base);
     --text: var(--dark-text);
-    --secondary: var(--dark-secondary)
+    --secondary: var(--dark-secondary);
+    --contrast: var(--dark-contrast)
   }
+
+  --fancy-color: #ff9292;
 
   color: var(--text);
   background: var(--base);
