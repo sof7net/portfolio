@@ -4,6 +4,7 @@
             <img :src="skill.image" alt="">
             <div class="skill__main__wrapper">
                 <span class="skill__main__title">{{skill.name}}</span>
+                <span class="skill__main__type">{{label}}</span>
                 <div class="skill__main__bar" :style="`width: ${skill.percent}%`"></div>
             </div>
         </div>
@@ -69,14 +70,15 @@ interface SkillInterface {
     image: string;
     percent: number;
     comment: string;
-    appreciation: number,
-    time_spent: string,
-    level: string,
+    appreciation: number;
+    time_spent: string;
+    level: string;
     subskills: SubskillInterface[];
 }
 
 defineProps<{
-    skill: SkillInterface
+    skill: SkillInterface,
+    label: string,
 }>()
 
 </script>
@@ -168,9 +170,11 @@ defineProps<{
             }
 
             &__infos {
+                
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+
                 &__title {
                     font-size: 1.25em;
                     font-family: 'IBM Plex Sans';

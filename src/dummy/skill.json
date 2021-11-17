@@ -1,0 +1,24 @@
+{
+    "name": "Python",
+    "type": "language",
+    "image": "https://www.python.org/static/opengraph-icon-200x200.png",
+    "percent": 100,
+    "appreciation": 3,
+    "time_spent": "6 mois",
+    "level": "good",
+    "comment": "lorem",
+    "subskills": [
+        {
+            "name": "Name of the subskill",
+            "image": "https://www.python.org/static/opengraph-icon-200x200.png",
+            "percent": 50,
+            "comment": "lorem lorem lorem"
+        },
+        {
+            "name": "Name of the subskill",
+            "image": "https://www.python.org/static/opengraph-icon-200x200.png",
+            "percent": 50,
+            "comment": "lorem lorem lorem"
+        }
+    ]
+}

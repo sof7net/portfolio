@@ -66,6 +66,7 @@ const props = defineProps<{
             width: 60%;
             padding: 1.5em;
             display: grid;
+            align-content: space-evenly;
         }
 
         &-image {

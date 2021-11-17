@@ -11,7 +11,7 @@
                 pour enfin rejoindre le monde du travail
             </p>
             <p>
-                Depuis tout jeune j'ai l'obsession de tout vouloir savoir et ce dans les moindres détails ce qui, allié à mon aisance en anglais, m'a permis d'acquérir
+                Depuis tout jeune j'ai l'obsession de tout vouloir savoir dans les moindres détails ce qui, allié à mon aisance en anglais, m'a permis d'acquérir
                 les connaissances actuelles ainsi que de me sentir véritablement lié à la mentalité de la communauté IT.
             </p>
             <p>
@@ -21,10 +21,8 @@
             <p>Bref, si j'ai bien retenu une chose en apprenant l'UX Design, c'est que les gens n'aiment pas <b>trop</b> lire, alors laissez moi vous guider.</p>
         </div>
 
-        <!-- <div class="about__carousel"> -->
-            <!-- <h2>Une chose sur moi</h2> -->
-            <!-- <AboutCarousel /> -->
-        <!-- </div> -->
+        <h2>Une chose sur moi</h2>
+        <Curious />
 
         <h2>Mon parcours</h2>
         <div class="about__record">
@@ -32,12 +30,16 @@
         </div>
 
         <h2>Mes compétences</h2>
+
         <p>Pour une meillure illustration et parce qu'on aime tous les graphiques, voici en un pour y voir un peu mieux sur ma maîtrise dans différentes technologies.</p>
-        <br>
-        <SkillItem v-for="skill in skills" :skill="skill" />
+
+        <MultipleSelect title="Filtrer les résultats" :options="skillTypes" :checked="checkedSkills" @update="getChecked"/>
+
+        <SkillItem v-for="skill in skills" v-if="checkedSkills.includes(skill.type)" :skill="skill" :label="skillTypes[skill.type]"/>
 
         <h2>Ce qu'il se passe dans ma tête</h2>
-        <!-- <AboutBrainstorming /> -->
+
+        <Brainstorming />
 
     </div>
 </template>
@@ -49,6 +51,9 @@
 
     import RecordCard from '../components/RecordCard.vue'
     import SkillItem from '../components/SkillItem.vue'
+    import MultipleSelect from '../components/MultipleSelect.vue';
+    import Curious from '../components/Curious.vue';
+    import Brainstorming from '../components/Brainstorming.vue';
 
     let greet = ref('');
     let allGreets = ['Hello World', 'Bonjour Monde', 'こんにちは世界', 'مرحبا بالعالم'];
@@ -65,32 +70,26 @@
     for (let i=0;i<6;i++)
         recordElements.push(exempleElement)
 
-    let skill = {
-        name: 'Python',
-        type: 'language',
-        image: 'https://www.python.org/static/opengraph-icon-200x200.png',
-        percent: 100,
-        appreciation: 3,
-        time_spent: '6 mois',
-        level: 'good',
-        comment: 'lorem',
-        subskills: [
-            {
-                name: 'Name of the subskill',
-                image: 'https://www.python.org/static/opengraph-icon-200x200.png',
-                percent: 50,
-                comment: 'lorem lorem lorem'
-            },
-            {
-                name: 'Name of the subskill',
-                image: 'https://www.python.org/static/opengraph-icon-200x200.png',
-                percent: 50,
-                comment: 'lorem lorem lorem'
-            }
-        ]
+
+    // SKILLSET
+
+    const skillTypes: Record<string,string>  = {
+        language : 'Langage',
+        softskill : 'Soft skill',
+        technology : 'Technologie',
+        other : 'Autre'
     }
 
-    let skills = [skill, skill];
+    let checkedSkills  = ref<string[]>([...Object.keys(skillTypes)]);
+
+    const getChecked = (checkedOptions: string[]) => {
+        checkedSkills.value = checkedOptions;
+    }
+
+    import skill from '../dummy/skill.json';
+
+    let skills = [{...skill}, {...skill}]
+    skills[1].percent = 30;
 
     const delay = (ms=150) => {
         return new Promise<void>(res => {
