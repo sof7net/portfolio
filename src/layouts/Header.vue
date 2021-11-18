@@ -20,7 +20,7 @@
 
     .header {
         padding: 2em 0;
-        margin-bottom: 2em;
+        margin-bottom: 3em;
         user-select: none;
         font-family: 'IBM Plex Sans';
         display: flex;

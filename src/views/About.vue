@@ -146,7 +146,6 @@
     .about {
 
         &__intro {
-            margin: 6em 0;
 
             &--greet {
                 font-family: 'IBM Plex Sans';

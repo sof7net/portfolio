@@ -144,7 +144,7 @@ h2 {
   text-transform: uppercase;
   font-size: 2.5em;
   margin-top: 4em;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   display: inline-block;
   left: 50%;
   transform: translateX(-50%);

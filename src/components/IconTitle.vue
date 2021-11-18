@@ -1,9 +1,9 @@
 <template>
-    <a class="icon-title" :href="props.link">
+    <router-link class="icon-title" :to="props.link">
         <h3 >{{props.text}}</h3>
         <span class="iconify-inline" v-if="props.icon" :data-icon="props.icon"></span>
         <span class="iconify-inline" v-else data-icon="ic:baseline-keyboard-double-arrow-right"></span>
-    </a>
+    </router-link>
 </template>
 
 <script setup lang="ts">
