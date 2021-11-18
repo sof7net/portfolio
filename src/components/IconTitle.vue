@@ -1,32 +1,27 @@
 <template>
-    <div class="icon-title">
-        <h3 @click="followLink">{{props.text}}</h3>
-        <span class="iconify-inline" :data-icon="props.icon"></span>
-    </div>
+    <a class="icon-title" :href="props.link">
+        <h3 >{{props.text}}</h3>
+        <span class="iconify-inline" v-if="props.icon" :data-icon="props.icon"></span>
+        <span class="iconify-inline" v-else data-icon="ic:baseline-keyboard-double-arrow-right"></span>
+    </a>
 </template>
 
 <script setup lang="ts">
 
-const props = defineProps({
-    text: String,
-    icon: {
-        type: String,
-        default: 'ic:baseline-keyboard-double-arrow-right'
-    },
-    link: String
-})
-
-function followLink() {
-    if (props.link) {
-        props.link.startsWith('http://')
-        ? window.open(props.link, '_blank')
-        : window.open(props.link, '_blank')
-    }
-}
+const props = defineProps<{
+    text: string,
+    icon?: string,
+    link: string
+}>()
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+
+
+.icon-title {
+
+    color: var(--text);
 
     h3 {
         display: inline-block;
@@ -41,5 +36,6 @@ function followLink() {
     svg {
         font-size: 2em;
     }
+}
 
 </style>

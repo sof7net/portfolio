@@ -29,9 +29,8 @@
 <style lang="scss">
 
     footer {
-        position: static;
+        margin-top: 4em;
         width: 100%;
-        margin-bottom: 0;
         background: var(--secondary);
         color: var(--text);
 

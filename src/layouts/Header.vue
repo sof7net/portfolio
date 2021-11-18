@@ -1,18 +1,18 @@
 <template>
-    <div class="header">
+    <header class="header">
         <div class="header__title">
             <h1>S O F 7</h1>
             <span>Self taught developer & it enthusiast</span>
         </div>
         <nav>
             <ul>
-                <li><router-link to="/">Home</router-link></li>
-                <li><router-link to="/about">About</router-link></li>
-                <li><router-link to="/projects">Projects</router-link></li>
-                <li><router-link to="/contact">Contact</router-link></li>
+                <li><router-link class="fancy" to="/">Home</router-link></li>
+                <li><router-link class="fancy" to="/about">About</router-link></li>
+                <li><router-link class="fancy" to="/projects">Projects</router-link></li>
+                <li><router-link class="fancy" to="/contact">Contact</router-link></li>
             </ul>
         </nav>
-    </div>
+    </header>
 </template>
 
 
@@ -73,17 +73,7 @@
                 position: relative;
                 font-size: 1.25em;
                 color: var(--text);
-                &::after {
-                    content: '';
-                    position: absolute;
-                    width: 87.5%;
-                    bottom: 10%;
-                    right: -5%;
-                    height: 22.5%;
-                    background: var(--fancy-color);
-                    z-index: -1;
-                    opacity: 0.65;
-                }
+
                 &:hover, &.router-link-active {
                     // need something better :)
                     color: var(--fancy-color);

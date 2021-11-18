@@ -2,8 +2,8 @@
     <div class="about">
 
         <div class="about__intro">
-            <h2> ~ {{greet}}</h2>
-            <h4>.. et bienvenue sur mon CV virtuel !</h4>
+            <span class="about__intro--greet"> ~ {{greet}}</span>
+            <span class="about__intro--welcome">.. et bienvenue sur mon CV virtuel !</span>
             <p>Moi c'est SOF7, prononcé "Soft" et inspiré par mon vrai prénom Sofiane.</p>
             <p>
                 Je suis un jeune développeur web autodidacte alimenté par ce qu'on pourrait appeler une passion pour l'informatique.
@@ -37,9 +37,16 @@
 
         <SkillItem v-for="skill in skills" v-if="checkedSkills.includes(skill.type)" :skill="skill" :label="skillTypes[skill.type]"/>
 
-        <h2>Ce qu'il se passe dans ma tête</h2>
+        <h2 class="fancy">à quoi je pense..</h2>
+
+        <p>Je suis quelqu'un de curieux et d'assez perfectionniste, je penses donc beaucoup et... j'aime ça !
+        <br>Laissez moi vous illustrer un peu ce qui se passe dans ma tête, et ce que j'envisages en ce moment par la même occasion.</p>
 
         <Brainstorming />
+
+        <div style="text-align: right;">
+            <IconTitle link="/projects" text="Concrètement? C'est par ici" />
+        </div>
 
     </div>
 </template>
@@ -50,6 +57,7 @@
     import { shuffle } from 'lodash';
 
     import RecordCard from '../components/RecordCard.vue'
+    import IconTitle from '../components/IconTitle.vue'
     import SkillItem from '../components/SkillItem.vue'
     import MultipleSelect from '../components/MultipleSelect.vue';
     import Curious from '../components/Curious.vue';
@@ -139,10 +147,13 @@
 
         &__intro {
             margin: 6em 0;
-            h2 {
-                margin: 0;
-                text-align: left;
 
+            &--greet {
+                font-family: 'IBM Plex Sans';
+                letter-spacing: 0.1em;
+                font-weight: 200;
+                text-transform: uppercase;
+                font-size: 2.5em;
                 &::after {
                     content: '|';
                     margin-left: 0.15em;
@@ -150,12 +161,10 @@
                 }
             }
 
-            h4 {
-                font-family: 'Roboto';
-                font-weight: normal;
-                margin: 0;
-                font-size: 1.5em;
-                opacity: .35;
+            &--welcome {
+                display: block;
+                font-size: 1.25em;
+                opacity: .5;
             }
         }
         

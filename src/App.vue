@@ -84,6 +84,10 @@ body {
   width: 55%;
   margin-left: 22.5%;
   font-weight: 300;
+  // text-align: center;
+  p {
+    text-align: left;
+  }
 }
 
 #watermark {
@@ -97,17 +101,53 @@ body {
   user-select: none;
 }
 
+
+.fancy {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 87.5%;
+    bottom: 10%;
+    right: -5%;
+    height: 22.5%;
+    background: var(--fancy-color);
+    z-index: -1;
+    opacity: 0.65;
+  }
+}
+
+@mixin fancy {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 87.5%;
+    bottom: 10%;
+    right: -5%;
+    height: 22.5%;
+    background: var(--fancy-color);
+    z-index: -1;
+    opacity: 0.65;
+  }
+}
+
+
 h2,h3,h4 {
   font-family: 'IBM Plex Sans';
 }
 
 h2 {
+  @include fancy;
   letter-spacing: 0.1em;
   font-weight: 200;
-  text-align: center;
   text-transform: uppercase;
   font-size: 2.5em;
-  margin: 2em;
+  margin-top: 4em;
+  margin-bottom: 1em;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 h3 {
