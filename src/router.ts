@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Projects from './views/Projects.vue'
+import Contact from './views/Contact.vue'
 
 export default createRouter({
     history: createWebHistory(),
@@ -19,6 +20,10 @@ export default createRouter({
         {
             path: '/projects',
             component: Projects
+        },
+        {
+            path: '/contact',
+            component: Contact
         },
         
     ],

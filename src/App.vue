@@ -173,12 +173,16 @@ ul {
 }
 
 select {
+  color: var(--text);
   background: none;
   border: none;
   font-family: 'IBM Plex Sans';
   text-transform: uppercase;
   outline: none;
   padding: 0.25em;
+  option {
+    background: var(--base);
+  }
 }
 
 input[type=checkbox] {
