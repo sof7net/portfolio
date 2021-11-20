@@ -1,0 +1,75 @@
+[
+    {
+        "title": "Project title",
+        "demo": "live demo link",
+        "source": "github link",
+        "blocks": [
+            {
+                "text": "A block with a media = 50% text/media",
+                "media": "https://via.placeholder.com/350x150"
+            },
+            {
+                "text": "A block with a media = 50% text/media",
+                "media": "https://via.placeholder.com/350x150"
+            },
+            {
+                "text": "A block with a media = 50% text/media",
+                "media": "https://via.placeholder.com/350x150"
+            },
+            {
+                "text": "A block without media = 100% width"
+            }
+        ],
+        "likes": 10,
+        "comments": [
+            {
+                "author": "CommentAuthor",
+                "date": "10/10/2010",
+                "text": "A comment basic text"
+            },
+            {
+                "author": "CommentAuthor",
+                "date": "10/10/2010",
+                "text": "A comment basic text"
+            }
+        ]
+    },
+    {
+        "title": "Project title 2",
+        "demo": "live demo link",
+        "source": "github link",
+        "blocks": [
+            {
+                "text": "A block with a media = 50% text/media",
+                "media": "https://via.placeholder.com/350x150"
+            },
+            {
+                "text": "A block with a media = 50% text/media",
+                "media": "https://via.placeholder.com/350x150"
+            },
+            {
+                "text": "A block without media = 100% width"
+            },
+            {
+                "text": "A block with a media = 50% text/media",
+                "media": "https://via.placeholder.com/350x150"
+            },
+            {
+                "text": "A block without media = 100% width"
+            }
+        ],
+        "likes": 10,
+        "comments": [
+            {
+                "author": "CommentAuthor",
+                "date": "10/10/2010",
+                "text": "A comment basic text"
+            },
+            {
+                "author": "CommentAuthor",
+                "date": "10/10/2010",
+                "text": "A comment basic text"
+            }
+        ]
+    }
+]
