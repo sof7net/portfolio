@@ -1,7 +1,7 @@
 <template>
     <div class="contact">
         <h2>Get in touch</h2>
-        <p>Si vous avez aimez mon profile et aimeriez collaber avec moi, vous pouvez remplir le formulaire ou m'envoyer un mail à: mail@domain.dn</p>
+        <p>Si vous avez aimer mon profil et aimeriez collaber avec moi, vous pouvez remplir le formulaire ou m'envoyer un mail à: mail@domain.dn</p>
         <fieldset class="contact__fieldset">
 
             <legend>Formulaire de contact</legend>

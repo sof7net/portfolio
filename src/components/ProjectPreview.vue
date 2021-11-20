@@ -45,13 +45,10 @@ const getImage = (url: string) => {
         display: flex;
         margin-bottom: 5em;
         overflow: hidden;
-
-        // A Remplacer par détection de scroll
-        transition: opacity .3s ease-in;
-        opacity: 0.45;
+        padding: 2em;
 
         &:hover {
-            opacity: 1;
+            // Ajouter animation du media
         }
 
         &__text {
@@ -59,7 +56,6 @@ const getImage = (url: string) => {
             padding-left: 1em;
 
             h3 {
-                border-bottom: solid 2px var(--text);
                 margin: 0.5em 0;
                 display: inline-block;
             }

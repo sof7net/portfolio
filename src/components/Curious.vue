@@ -62,7 +62,7 @@
             opacity: 0.25;
             display: grid;
             place-items: center;
-            font-size: 4em;
+            font-size: 3em;
             transition: opacity .2s ease-in-out;
             backdrop-filter: blur(2px);
 
