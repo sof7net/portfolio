@@ -6,10 +6,10 @@
         </div>
         <nav>
             <ul>
-                <li><router-link class="fancy" to="/">Home</router-link></li>
-                <li><router-link class="fancy" to="/about">About</router-link></li>
-                <li><router-link class="fancy" to="/projects">Projects</router-link></li>
-                <li><router-link class="fancy" to="/contact">Contact</router-link></li>
+                <li><router-link class="fancy" to="/">home</router-link></li>
+                <li><router-link class="fancy" to="/about">à propos</router-link></li>
+                <li><router-link class="fancy" to="/projects">projets</router-link></li>
+                <li><router-link class="fancy" to="/contact">contact</router-link></li>
             </ul>
         </nav>
     </header>

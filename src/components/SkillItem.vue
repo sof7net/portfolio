@@ -96,9 +96,11 @@ defineProps<{
     }
 
     .skill {
-        margin-bottom: 2em;
+        margin: 2.5em 0;
         overflow: hidden;
         transition: max-height 1s ease-in-out;
+        padding-bottom: 1em;
+
         &__main {
 
             background: var(--base);
@@ -108,8 +110,7 @@ defineProps<{
 
             img {
                 border-radius: 100%;
-                width: 6em;
-                height: 6em;
+                width: 90%;
                 margin-right: 1em;
             }
 

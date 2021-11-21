@@ -6,26 +6,29 @@
                 <h4>{{props.element.subtitle}}</h4>
             </div>
             <p v-if="props.element.text">{{props.element.text}}</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt at provident necessitatibus amet placeat doloremque ratione laboriosam reprehenderit porro perspiciatis molestias, perferendis, exercitationem harum tempore odit quis est atque fugit. Nobis, aliquid fugit, dignissimos iusto amet cum autem eveniet ratione atque vero qui non quisquam omnis cupiditate ipsam quibusdam natus rem ea! Ipsum ducimus iste sit sapiente asperiores, est a et vitae. Similique aliquam magni distinctio mollitia, molestiae expedita nemo illo numquam porro, molestias rerum id consequatur, dolore voluptatibus totam veniam nihil architecto facilis quos labore temporibus iusto. Nulla, ab nisi magni eum impedit similique itaque accusantium.</p>
         </div>
         <div class="about__record__card-image">
-            <img :src="`/src/assets/img/${props.element.imageLink}.svg`">
+            <img :src="getImageUrl(props.element.image)">
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 
+const getImageUrl = (filename: string) => {
+    return new URL(`../assets/img/${filename}.svg`, import.meta.url).href;
+}
+
 interface validElement {
-    title: String;
-    subtitle: String;
-    text: String;
-    imageLink: String;
+    title: string;
+    subtitle: string;
+    text: string;
+    image: string;
 }
 
 const props = defineProps<{
     element: validElement
-    reverse: Boolean,
+    reverse: boolean,
 }>()
 </script>
 

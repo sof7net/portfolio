@@ -3,14 +3,14 @@
     <AboutPreview />
 
     <div class="projects-preview">
-        <h2>Some of my work</h2>
+        <h2>quelques uns de mes projets</h2>
         <ProjectPreview v-for="project, index in projects" :key="project.title" :data="project" :reverse="index % 2 == 0"/>
         <div style="text-align: right;">
-            <IconTitle text="ALL OF MY WORK" link="/projects" />
+            <IconTitle text="Tout mon travail" link="/projects" />
         </div>
     </div>
 
-    <h2>Improving this website</h2>
+    <h2>Améliorer mon portfolio</h2>
 
     <TodoList />
 
@@ -23,20 +23,7 @@
     import IconTitle from '../components/IconTitle.vue';
     import TodoList from '../components/TodoList.vue';
 
-    let projects = [
-        {
-            title: 'stuff',
-            description: 'some more stuff',
-            mediaUrl: '',
-            projectUrl: ''
-        },
-        {
-            title: 'stuff',
-            description: 'some more stuff',
-            mediaUrl: '',
-            projectUrl: ''
-        }
-    ] 
+    import projects from '../dummy/projects.json';
 
 </script>
 

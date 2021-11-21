@@ -1,7 +1,7 @@
 <template>
     <div class="contact">
         <h2>Get in touch</h2>
-        <p>Si vous avez aimer mon profil et aimeriez collaber avec moi, vous pouvez remplir le formulaire ou m'envoyer un mail à: mail@domain.dn</p>
+        <p>Si vous avez aimer mon profil et aimeriez collaber avec moi, vous pouvez remplir le formulaire ou m'envoyer un mail à: <a href="mailto:sof7net@gmail.com">sof7net@gmail.com</a></p>
         <fieldset class="contact__fieldset">
 
             <legend>Formulaire de contact</legend>
@@ -20,7 +20,7 @@
                     <div class="contact__fieldset--field">
                         <label for="">Type d'offre</label>
                         <select name="" id="">
-                            <option value="">Select a type</option>
+                            <option value="">Select a type of offer</option>
                             <option value="">Type d'offre 1</option>
                             <option value="">Type d'offre 2</option>
                             <option value="">Type d'offre 3</option>
@@ -48,7 +48,7 @@
         </fieldset>
 
         <h2>Réseaux sociaux</h2>
-        <p>Vous pouvez aussi visiter les prochains liens si vous souhaitez en savoir plus sur moi, ou me contactez via ces plateformes.</p>
+        <p>Vous pouvez aussi visiter les prochains liens si vous souhaitez en savoir plus sur moi, ou même me contacte via ces plateformes</p>
 
         <div class="contact__social">
             <a v-for="social in socials" :href="social.link ? social.link : null" target="blank" :style="social.link ? '' : 'cursor: initial;'">
@@ -103,7 +103,7 @@
             color: '#A3FFD3',
         },
         {
-            name: 'Thank you for visiting',
+            name: 'Merci pour votre visite',
             link: '',
             icon: 'mdi:hand-wave',
         }
@@ -114,6 +114,12 @@
 
 <style lang="scss">
     .contact {
+
+        a {
+            color: var(--text);
+            // text-decoration: none;
+        }
+
         h2 {
             left: 0;
             transform: none;
@@ -170,7 +176,7 @@
             &--submit {
                 background: var(--text);
                 color: var(--base);
-                font-size: 1.5em;
+                font-size: 1.25em;
                 display: flex;
                 align-items: center;
                 justify-content: space-evenly;
@@ -205,12 +211,12 @@
             user-select: none;
             margin: 5em 0;
             position: relative;
-            width: 60%;
-            left: 20%;
+            width: 70%;
+            left: 15%;
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-column-gap: 3em;
-            grid-row-gap: 2em;
+            grid-row-gap: 2.5em;
             font-size: 1.15em;
             font-family: "IBM Plex Sans";
             text-transform: uppercase;

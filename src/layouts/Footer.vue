@@ -3,14 +3,14 @@
         <div class="footer--wrap">
             <div>
                 <ul class="footer__link-list">
-                    <li v-if="$route.path != '/'"><router-link to="/">Go back to homepage</router-link></li>
-                    <li v-if="$route.path != '/about'"><router-link to="/about">Learn more about me</router-link></li>
-                    <li v-if="$route.path != '/projects'"><router-link to="/projects">Look at my projects</router-link></li>
-                    <li v-if="$route.path != '/contact'"><router-link to="/contact">Let's work together</router-link></li>
+                    <li v-if="$route.path != '/'"><router-link to="/">Retourner à l'accueil</router-link></li>
+                    <li v-if="$route.path != '/about'"><router-link to="/about">En savoir plus sur moi</router-link></li>
+                    <li v-if="$route.path != '/projects'"><router-link to="/projects">Voir mes projets</router-link></li>
+                    <li v-if="$route.path != '/contact'"><router-link to="/contact">Travaillons ensemble</router-link></li>
                 </ul>
             </div>
             <div>
-                <p>Made with attention by SOF7</p>
+                <p>Fait avec attention par SOF7</p>
                 <p><a href="mailto:sof7net@gmail.com">sof7net@gmail.com</a></p>
                 <br>
                 <ul class="footer__social-list">
@@ -61,6 +61,8 @@
         }
 
         .footer__social-list {
+
+            margin-top: 0.25em;
 
             svg {
                 transition: color .25s ease-in-out;

@@ -1,13 +1,13 @@
 <template>
-    <!-- TODO: Animer le mediaUrl sur un mouseover -->
+    <!-- TODO: Animer le previewMedia sur un mouseover -->
     <div class="project-preview" :style="{flexDirection: props.reverse ? 'row-reverse' : 'row'}">
         <div class="project-preview__text">
             <h3>{{data.title}}</h3>
-            <a v-if="data.projectUrl || data.projectUrl == '' " :href="data.projectUrl" target="blank"><span class="iconify-inline" data-icon="il:url"></span></a>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur minima, possimus qui nostrum officia praesentium sequi iure quam. Quaerat ea dolor, perferendis quod commodi quos omnis ab vero laborum et voluptate modi pariatur numquam ullam adipisci doloremque recusandae impedit natus, iusto voluptatem dicta, deleniti unde nobis! Reprehenderit assumenda iure ipsum labore non dolores incidunt dolorem totam esse corporis. Accusantium illo quisquam culpa ad veniam eaque dolor totam a unde natus et labore, dolores praesentium atque consequuntur ipsa quis iusto porro! Nulla inventore amet eveniet soluta cumque eos in nemo, officiis consequuntur ipsam tempore id vero consectetur a, quidem natus tempora!</p>
+            <a v-if="data.demo || data.demo == '' " :href="data.demo" target="blank"><span class="iconify-inline" data-icon="il:url"></span></a>
+            <p>{{data.preview}}</p>
         </div>
         <div class="project-preview__media">
-            <a :href="getImage(data.mediaUrl)" target="blank"><img :src="getImage(data.mediaUrl)" :alt="`How the ${data.title} project looks like`"></a>
+            <a :href="getImage(data.previewMedia)" target="blank"><img :src="getImage(data.previewMedia)" :alt="`How the ${data.title} project looks like`"></a>
         </div>
     </div>
 </template>
@@ -17,22 +17,18 @@
 
 interface validData {
     title: string;
-    description: string;
-    mediaUrl: string;
-    projectUrl: string;
+    preview: string;
+    previewMedia: string;
+    demo: string;
 }
 
 const props = defineProps<{
-    reverse: Boolean,
+    reverse: boolean,
     data: validData
 }>()
 
-// Temporaire le temps de trouver comment host/gérer les projets
-import defaultURL from '../assets/img/default_project_preview.png'
-
-const getImage = (url: string) => {
-    url = url || defaultURL
-    return url
+const getImage = (name: string) => {
+    return new URL(`../assets/${name}`, import.meta.url).href
 }
 
 </script>

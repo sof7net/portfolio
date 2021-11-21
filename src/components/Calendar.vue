@@ -80,10 +80,14 @@
             up: () => {
                 let idx = months.indexOf(month.value)
                 month.value = idx == 0 ? months[months.length-1] : months[idx-1]
+                if (day.value > dayPerMonth[month.value])
+                    day.value = dayPerMonth[month.value]
             },
             down: () => {
                 let idx = months.indexOf(month.value)
                 month.value = months.indexOf(month.value) == months.length-1 ? months[0] : months[idx+1]
+                if (day.value > dayPerMonth[month.value])
+                    day.value = dayPerMonth[month.value]
             },
         },
         year: {

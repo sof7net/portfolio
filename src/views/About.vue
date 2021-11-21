@@ -15,7 +15,7 @@
                 les connaissances actuelles ainsi que de me sentir véritablement lié à la mentalité de la communauté IT.
             </p>
             <p>
-                J'essaye de me pousser à toujours devenir quelqu'un de nouveau, de différent, <u>et pas seulement devant un ordinateur !</u> <br>
+                J'essaye de me pousser à toujours devenir quelqu'un de nouveau, de différent, et pas seulement devant un ordinateur !<br>
                 Mes intérêts sont divers et variés: Cultures étrangères, Sport (de l'équitation au MMA), Litérature classique, Manga, et bien d'autres..
             </p>
             <p>Bref, si j'ai bien retenu une chose en apprenant l'UX Design, c'est que les gens n'aiment pas <b>trop</b> lire, alors laissez moi vous guider.</p>
@@ -29,13 +29,14 @@
             <RecordCard v-for="element,index in recordElements" :element="element" :key="index" :reverse="index % 2 != 0"/>
         </div>
 
-        <h2>Mes compétences</h2>
-
-        <p>Pour une meillure illustration et parce qu'on aime tous les graphiques, voici en un pour y voir un peu mieux sur ma maîtrise dans différentes technologies.</p>
-
-        <MultipleSelect title="Filtrer les résultats" :options="skillTypes" :checked="checkedSkills" @update="getChecked"/>
-
-        <SkillItem v-for="skill in skills" v-if="checkedSkills.includes(skill.type)" :skill="skill" :label="skillTypes[skill.type]"/>
+        <div class="about__skills">
+            <h2>Mes compétences</h2>
+            <p>Pour une meillure illustration et parce qu'on aime tous les graphiques, voici en un pour y voir un peu mieux sur ma maîtrise dans différentes technologies.</p>
+            <MultipleSelect title="Filtrer les résultats" :options="skilltypes" :checked="checkedSkills" @update="getChecked"/>
+            <div class="about__skills__items">
+                <SkillItem v-for="skill in skills" v-show="checkedSkills.includes(skill.type)" :skill="skill" :label="skilltypes[skill.type]"/>
+            </div>
+        </div>
 
         <h2 class="fancy">à quoi je pense..</h2>
 
@@ -66,38 +67,22 @@
     let greet = ref('');
     let allGreets = ['Hello World', 'Bonjour Monde', 'こんにちは世界', 'مرحبا بالعالم'];
 
-    const exempleElement = {
-        title: 'This is a title',
-        subtitle: 'This is a subtitle describing stuff',
-        text: '',
-        imageLink: 'tree'    
-    }
-
-    const recordElements : any[] = []
-
-    for (let i=0;i<6;i++)
-        recordElements.push(exempleElement)
-
+    import recordElements from '../dummy/records.json';
 
     // SKILLSET
 
-    const skillTypes: Record<string,string>  = {
-        language : 'Langage',
-        softskill : 'Soft skill',
-        technology : 'Technologie',
-        other : 'Autre'
-    }
+    import _skilltypes from '../dummy/skilltypes.json';
+    import skills from '../dummy/skills.json';
 
-    let checkedSkills  = ref<string[]>([...Object.keys(skillTypes)]);
+    const skilltypes : Record<string,string> = _skilltypes;
+
+
+    let checkedSkills  = ref<string[]>([...Object.keys(skilltypes)]);
 
     const getChecked = (checkedOptions: string[]) => {
         checkedSkills.value = checkedOptions;
     }
 
-    import skill from '../dummy/skill.json';
-
-    let skills = [{...skill}, {...skill}]
-    skills[1].percent = 30;
 
     const delay = (ms=150) => {
         return new Promise<void>(res => {
@@ -171,6 +156,12 @@
             display: grid;
             grid-gap: 10em;
             // Mettre un scroll stylé ?
+        }
+
+        &__skills {
+            &__items {
+                display: grid;
+            }
         }
 
     }

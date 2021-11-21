@@ -3,6 +3,8 @@
         "title": "Project title",
         "demo": "live demo link",
         "source": "github link",
+        "preview": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur minima, possimus qui nostrum officia praesentium sequi iure quam. Quaerat ea dolor, perferendis quod commodi quos omnis ab vero laborum et voluptate modi pariatur numquam ullam adipisci doloremque recusandae impedit natus, iusto voluptatem dicta, deleniti unde nobis! Reprehenderit assumenda iure ipsum labore non dolores incidunt dolorem totam esse corporis. Accusantium illo quisquam culpa ad veniam eaque dolor totam a unde natus et labore, dolores praesentium atque consequuntur ipsa quis iusto porro! Nulla inventore amet eveniet soluta cumque eos in nemo, officiis consequuntur ipsam tempore id vero consectetur a, quidem natus tempora!",
+        "previewMedia": "img/default_project_preview.png",
         "blocks": [
             {
                 "text": "A block with a media = 50% text/media",
@@ -38,6 +40,8 @@
         "title": "Project title 2",
         "demo": "live demo link",
         "source": "github link",
+        "preview": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur minima, possimus qui nostrum officia praesentium sequi iure quam. Quaerat ea dolor, perferendis quod commodi quos omnis ab vero laborum et voluptate modi pariatur numquam ullam adipisci doloremque recusandae impedit natus, iusto voluptatem dicta, deleniti unde nobis! Reprehenderit assumenda iure ipsum labore non dolores incidunt dolorem totam esse corporis. Accusantium illo quisquam culpa ad veniam eaque dolor totam a unde natus et labore, dolores praesentium atque consequuntur ipsa quis iusto porro! Nulla inventore amet eveniet soluta cumque eos in nemo, officiis consequuntur ipsam tempore id vero consectetur a, quidem natus tempora!",
+        "previewMedia": "img/default_project_preview.png",
         "blocks": [
             {
                 "text": "A block with a media = 50% text/media",

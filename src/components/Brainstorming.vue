@@ -8,16 +8,10 @@
 <script lang="ts" setup>
 
 import { onMounted } from 'vue';
+import items from '../dummy/brainstorming.json';
 
 //@ts-ignore
 import TagCloud from 'TagCloud';
-
-const exempleItem = 'faire quelque chose';
-const items : string[] = [] ;
-
-for (let i=0; i<15; i++) {
-    items.push(exempleItem)
-}
 
 onMounted(() => {
     let parent = document.querySelector('.about__brainstorm');
